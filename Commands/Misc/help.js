@@ -41,7 +41,7 @@ module.exports = {
 
             if (command.aliases.length >= 1)
             {
-                embed.addField("Alias", `${prefix}${command.aliases.join(', ')}`, true);
+                embed.addField("Alias", `${command.aliases.join(', ')}`, true);
             }
             message.reply(embed);
         }
