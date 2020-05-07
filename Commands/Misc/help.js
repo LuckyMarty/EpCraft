@@ -6,7 +6,7 @@ const categoryList = fs.readdirSync('./Commands');
 
 module.exports = {
     name: 'help',
-    aliases: ['help'],
+    aliases: ['help', 'aide', 'ecki', "Ecki", "EpCraft", "epcraft"],
     description: "Afficher toutes les commandes possible",
     category: "misc",
     agrs: false,
