@@ -1,6 +1,6 @@
 module.exports = {
     name: 'facebook',
-    aliases: ['facebook'],
+    aliases: ['facebook', 'fb','FB'],
     description: "Obtenir le lien Facebook EPCraft",
     category: "informations",
     usage: '',
