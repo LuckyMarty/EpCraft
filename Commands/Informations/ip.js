@@ -1,6 +1,6 @@
 module.exports = {
     name: 'ip',
-    aliases: ['ip'],
+    aliases: ['ip', 'IP', 'Ip'],
     description: "Adresse IP du serveur EPCraft",
     category: "informations",
     usage: '',
