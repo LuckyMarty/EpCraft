@@ -6,52 +6,48 @@ const fs = require('fs');
 Ecki.login(process.env.TOKEN);
 const PREFIX = process.env.PREFIX;
 
-const category = fs.readdirSync('./Commands');
+
+// CHERCHER LA COMMANDE ET ALIAS
+// const fs = require('fs');
 Ecki.commands = new Discord.Collection();
-for (let i=0 ; i<category.length ; i++)
+Ecki.aliases = new Discord.Collection();
+const category = fs.readdirSync('./Commands');
+
+for (let j=0 ; j<category.length ; j++)
 {
-    const commandFiles = fs.readdirSync('./Commands/' + category[i] + '/').filter(file => file.endsWith('.js'));
-    for (const file of commandFiles)
-    {
-        const command = require(`./Commands/${category[i]}/${file}`);
-    
-        Ecki.commands.set(command.name, command);
-    }
+    fs.readdir("./Commands/"+category[j], (err, files) => {
+        if (err) console.log(err);
+
+        let jsfile = files.filter(f => f.split(".").pop() === "js");
+        
+        if (jsfile.length <= 0)
+        {
+            return console.log("[LOGS] Impossible de trouver la commande !");
+        }
+
+        jsfile.forEach((f, i) => {
+            let pull = require(`./Commands/${category[j]}/${f}`);
+            Ecki.commands.set(pull.name, pull);      //Chercher la commande
+            pull.aliases.forEach(alias => {
+                Ecki.aliases.set(alias, pull.name);  //Chercher l'alias de la commande
+            });
+        });
+    });
 }
 
-// ________________________________________ //
-//                COMMANDES
-// ________________________________________ //
 Ecki.on("message", message => {
-    let args = message.content;
-    // console.log(args[0]);
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray[1];
 
-    if (args[0] === PREFIX)
+    if (cmd[0] === PREFIX)
     {
-        args = message.content.substring(PREFIX.length).split(" ");
+        let commandfile = Ecki.commands.get(cmd.slice(PREFIX.length)) || Ecki.commands.get(Ecki.aliases.get(cmd.slice(PREFIX.length)));
 
-        switch (args[0]) {
-            case "ip":
-                Ecki.commands.get('ip').execute(message, args);
-                break;
-            case "facebook":
-                Ecki.commands.get('facebook').execute(message, args);
-                break;
-            case "youtube":
-                Ecki.commands.get('youtube').execute(message, args);
-                break;
-            case "site":
-                Ecki.commands.get('site').execute(message, args);
-                break;
-            case "mc":
-                Ecki.commands.get('mc').execute(message, args);
-                break;
-            case "help":
-                Ecki.commands.get('help').execute(Ecki, message, args[1]);
-                break;
-        }
+        if (commandfile) commandfile.execute(Ecki, message, args);
     }
 });
+
 
 Ecki.on('ready', () => {
     console.log('Connecté !');

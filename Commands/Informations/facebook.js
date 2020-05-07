@@ -4,7 +4,7 @@ module.exports = {
     description: "Obtenir le lien Facebook EPCraft",
     category: "informations",
     usage: '',
-    execute(message, args) {
+    execute(bot, message, args) {
         const Discord = require('discord.js');
 
         let Embed = new Discord.MessageEmbed()

@@ -4,7 +4,7 @@ module.exports = {
     description: "Informations sur le serveur EPCraft",
     category: "informations",
     usage: '',
-    execute(message, args) {
+    execute(bot, message, args) {
         const Discord = require('discord.js');
         const ping = require('minecraft-server-util');
         

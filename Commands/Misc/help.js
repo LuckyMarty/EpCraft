@@ -12,7 +12,7 @@ module.exports = {
     agrs: false,
     usage: '<command_name>',
 
-    execute(client, message, args) {
+    execute(bot, message, args) {
 
         if(!args)
         {
@@ -24,7 +24,7 @@ module.exports = {
             {
                 embed.addField(
                 `${category}`,
-                `${client.commands.filter(cat => cat.category === category.toLowerCase()).map(cmd => cmd.name).join(' , ')}`
+                `${bot.commands.filter(cat => cat.category === category.toLowerCase()).map(cmd => cmd.name).join(' , ')}`
                 )
             }
 
@@ -32,16 +32,16 @@ module.exports = {
             message.reply(embed);
         } 
         else {
-            const command = client.commands.get(args) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(args));
+            const command = bot.commands.get(args) || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(args));
 
             const embed = new Discord.MessageEmbed()
             .setTitle(`\`${command.name}\``)
             .addField("Description", `${command.description}`)
             .addField("Utilisation", command.usage ? `${prefix}${command.name} ${command.usage}` : `${prefix}${command.name}`, true)
 
-            if (command.aliases.length > 1)
+            if (command.aliases.length >= 1)
             {
-                embed.addField("Alias", `${command.aliases.join(', ')}`, true);
+                embed.addField("Alias", `${prefix}${command.aliases.join(', ')}`, true);
             }
             message.reply(embed);
         }

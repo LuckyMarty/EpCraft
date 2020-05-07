@@ -1,10 +1,10 @@
 module.exports = {
     name: 'youtube',
-    aliases: ['youtube'],
+    aliases: ['ytb'],
     description: "Obtenir le lien youtube EPCraft",
     category: "informations",
     usage: '',
-    execute(message, args) {
+    execute(bot, message, args) {
         const Discord = require('discord.js');
 
         let Embed = new Discord.MessageEmbed()
