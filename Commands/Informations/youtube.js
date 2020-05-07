@@ -1,6 +1,6 @@
 module.exports = {
     name: 'youtube',
-    aliases: ['ytb'],
+    aliases: ['ytb', 'Youtube', 'YouTube', 'Chaine', 'chaine'],
     description: "Obtenir le lien youtube EPCraft",
     category: "informations",
     usage: '',
