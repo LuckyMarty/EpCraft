@@ -1,6 +1,6 @@
 module.exports = {
     name: 'mc',
-    aliases: ['mc'],
+    aliases: ['mc', "minecraft", "serveur", "server"],
     description: "Informations sur le serveur EPCraft",
     category: "informations",
     usage: '',
