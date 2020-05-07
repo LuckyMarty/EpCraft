@@ -36,16 +36,13 @@ for (let j=0 ; j<category.length ; j++)
 }
 
 Ecki.on("message", message => {
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray[1];
+    if (!message.content.startsWith(PREFIX) || message.author.bot) return;
 
-    if (cmd[0] === PREFIX)
-    {
-        let commandfile = Ecki.commands.get(cmd.slice(PREFIX.length)) || Ecki.commands.get(Ecki.aliases.get(cmd.slice(PREFIX.length)));
+    let args = message.content.slice(PREFIX.length).split(/ +/);
+    let cmd = args.shift().toLowerCase();
 
-        if (commandfile) commandfile.execute(Ecki, message, args);
-    }
+    let commandfile = Ecki.commands.get(cmd) || Ecki.commands.get(Ecki.aliases.get(cmd));
+    if (commandfile) commandfile.execute(Ecki, message, args);
 });
 
 
