@@ -14,7 +14,7 @@ module.exports = {
 
     execute(bot, message, args) {
 
-        if(!args)
+        if(!args[0])
         {
             const embed = new Discord.MessageEmbed()
             .setTitle("Liste des commandes")
@@ -32,7 +32,7 @@ module.exports = {
             message.reply(embed);
         } 
         else {
-            const command = bot.commands.get(args) || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(args));
+            const command = bot.commands.get(args[0]) || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(args[0]));
 
             const embed = new Discord.MessageEmbed()
             .setTitle(`\`${command.name}\``)
