@@ -1,6 +1,6 @@
 module.exports = {
     name: 'site',
-    aliases: ['site'],
+    aliases: ['site', 'web'],
     description: "Obtenir le lien du site EPCraft",
     category: "informations",
     usage: '',
