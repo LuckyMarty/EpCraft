@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
-const {prefix} = require('../../config.json');
-const {readdirSync} = require("fs");
-const categoryList = readdirSync('./commands');
-console.log(categoryList);
+const prefix = process.env.PREFIX;
+const fs = require("fs");
+const categoryList = fs.readdirSync('./Commands');
+// console.log(categoryList);
 
 module.exports = {
     name: 'help',

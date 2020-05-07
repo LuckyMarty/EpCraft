@@ -7,9 +7,8 @@ module.exports = {
     execute(message, args) {
         const Discord = require('discord.js');
         const ping = require('minecraft-server-util');
-        const config = require('../../config.json');
         
-        ping(config.ip, 25565, (error, response) => {
+        ping(process.env.IP, 25565, (error, response) => {
             if (error) throw error;
 
             let Embed = new Discord.MessageEmbed()
