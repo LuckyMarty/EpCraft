@@ -43,6 +43,15 @@ Ecki.on("message", message => {
 
     if (!Ecki.commands.has(cmd)) return;
     let commandfile = Ecki.commands.get(cmd) || Ecki.commands.get(Ecki.aliases.get(cmd));
+   
+    // Ajouter des informations sur le Handler
+    if (commandfile.args && !args.length)
+    {
+        let noArgsReply = `Il nous faut des arguments pour cette commande, ${message.author} !`;
+        if (commandfile.usage) noArgsReply += `\nVoici comment utiliser la commande : \`${PREFIX}${commandfile.name} ${commandfile.usage}\``;
+        return message.channel.send(noArgsReply);
+    }
+    
     if (commandfile) commandfile.execute(Ecki, message, args);
 });
 
