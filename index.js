@@ -52,7 +52,26 @@ Ecki.on("message", message => {
         return message.channel.send(noArgsReply);
     }
     
-    if (commandfile) commandfile.execute(Ecki, message, args);
+    // Anti Spam
+    const timeNow = Date.now();
+    const tStamps = Ecki.cooldowns.get(commandfile.name);
+    const cdAmount = (commandfile.cooldown || 5) * 1000;
+
+    if (tStamps.has(message.author.id))
+    {
+        const cdExpirationTime = tStamps.get(message.author.id) + cdAmount;
+
+        if (timeNow < cdExpirationTime)
+        {
+            timeLeft = (cdExpirationTime - timeNow) / 1000;
+            return message.reply(`Merci d'attendre ${timeLeft.toFixed(0)} seconde(s) avant de ré-utiliser la commande \`${commandfile.name}\``);
+        }
+    }
+    
+    tStamps.set(message.author.id, timeNow);
+    setTimeout(() => tStamps.delete(message.author.id), cdAmount);
+
+    commandfile.execute(Ecki, message, args);
 });
 
 
