@@ -40,6 +40,14 @@ Ecki.on("message", message => {
 
     let args = message.content.slice(PREFIX.length).split(/ +/);
     let cmd = args.shift().toLowerCase();
+    
+    let commandfile = Ecki.commands.get(cmd) || Ecki.commands.get(Ecki.aliases.get(cmd));
+    if (!commandfile) return;
+
+    if (commandfile.isUserAdmin && message.guild.member(message.mentions.users.first()).hasPermission('ADMINISTRATOR')) return message.reply("Tu ne peux pas utiliser cette commande sur cette utilisateur.");
+
+    if (commandfile.permissions && !message.member.hasPermission('ADMINISTRATOR')) return message.reply("Tu n'as pas de permission pour cette commande !");
+
 
     let commandfile = Ecki.commands.get(cmd) || Ecki.commands.get(Ecki.aliases.get(cmd));
     if (!commandfile) return;
