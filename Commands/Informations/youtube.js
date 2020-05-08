@@ -4,6 +4,9 @@ module.exports = {
     description: "Obtenir le lien youtube EPCraft",
     category: "informations",
     usage: '',
+    permissions: false,
+    isUserAdmin: false,
+    
     execute(bot, message, args) {
         const Discord = require('discord.js');
 
