@@ -69,7 +69,7 @@ Ecki.on('ready', () => {
     function joueurs() {
         
         ping(process.env.IP, 25565, (error, response) => {
-            Ecki.user.setActivity("EpCraft " + response.onlinePlayers + "/" + response.maxPlayers +" (!help)", {type: 1});
+            Ecki.user.setActivity("EpCraft " + response.onlinePlayers + "/" + response.maxPlayers +" (!help)", {type: "PLAYING"});
         });
     }
     setInterval(joueurs, 1000);
