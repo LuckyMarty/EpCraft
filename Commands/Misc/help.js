@@ -14,7 +14,7 @@ module.exports = {
 
     execute(bot, message, args) {
 
-        if(!args[0])
+        if(!args.length)
         {
             const embed = new Discord.MessageEmbed()
             .setTitle("Liste des commandes")
