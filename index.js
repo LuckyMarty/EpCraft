@@ -41,8 +41,8 @@ Ecki.on("message", message => {
     let args = message.content.slice(PREFIX.length).split(/ +/);
     let cmd = args.shift().toLowerCase();
 
-    if (!Ecki.commands.has(cmd)) return;
     let commandfile = Ecki.commands.get(cmd) || Ecki.commands.get(Ecki.aliases.get(cmd));
+    if (!commandfile) return;
    
     // Ajouter des informations sur le Handler
     if (commandfile.args && !args.length)
