@@ -3,14 +3,14 @@ const Ecki = new Discord.Client();
 const ping = require('minecraft-server-util');
 const fs = require('fs');
 
+const collections = ['commands', 'aliases', 'cooldowns'];
+collections.forEach(x => Ecki[x] = new Discord.Collection());
+
 Ecki.login(process.env.TOKEN);
 const PREFIX = process.env.PREFIX;
 
 
 // CHERCHER LA COMMANDE ET ALIAS
-// const fs = require('fs');
-Ecki.commands = new Discord.Collection();
-Ecki.aliases = new Discord.Collection();
 const category = fs.readdirSync('./Commands');
 
 for (let j=0 ; j<category.length ; j++)
