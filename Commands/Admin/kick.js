@@ -14,7 +14,7 @@ module.exports = {
 
         user ? message.guild.member(user).kick(reason) : message.channel.send("L'utilisateur n'existe pas !");
         
-        const embed = new MessageEmbed()
+        const embed = new Discord.MessageEmbed()
         .setAuthor(`${user.username} ${user.id}`)
         .setColor("#dc143c")
         .setDescription(`**Action** : kick\n **Raison** : ${reason}`)
