@@ -9,12 +9,14 @@ module.exports = {
     isUserAdmin: true,
     
     execute(bot, message, args) {
+        const {MessageEmbed} = require("discord.js");
+        
         const user = message.mentions.users.first();
         const reason = (args.splice(1).join(" ") || 'Aucune raison spécifié');
 
         user ? message.guild.member(user).kick(reason) : message.channel.send("L'utilisateur n'existe pas !");
         
-        const embed = new Discord.MessageEmbed()
+        const embed = new MessageEmbed()
         .setAuthor(`${user.username} ${user.id}`)
         .setColor("#dc143c")
         .setDescription(`**Action** : kick\n **Raison** : ${reason}`)
