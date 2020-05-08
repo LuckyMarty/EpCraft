@@ -4,7 +4,7 @@ module.exports = {
     description: "Kick un utilisateur",
     category: "admin",
     cooldown: 5,
-    usage: '<utilisateur> [raison]',
+    usage: '<utilisateur> [<raison> optionnel]',
     permissions: true,
     isUserAdmin: true,
     
