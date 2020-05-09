@@ -36,6 +36,8 @@ for (let j=0 ; j<category.length ; j++)
 }
 
 Ecki.on("message", message => {
+    Ecki.commands.get('visiteur').execute("", message, "");
+    
     if (!message.content.startsWith(PREFIX) || message.author.bot) return;
 
     let args = message.content.slice(PREFIX.length).split(/ +/);
@@ -76,3 +78,24 @@ Ecki.on('ready', () => {
 
 });
 
+Ecki.on('guildMemberAdd', member => {
+    const inLog = member.guild.channels.cache.find((channel) => channel.id === "708624241053925396");
+    if (!inLog) return;
+
+    const embed_New_user = new Discord.MessageEmbed()
+    .setColor("#77dd77")
+    .setTitle(`${member.user.username} nous a rejoin`)
+    .setTimestamp();
+    return inLog.send(embed_New_user);
+});
+
+Ecki.on('guildMemberRemove', member => {
+    const inLog = member.guild.channels.cache.find((channel) => channel.id === "708624241053925396");
+    if (!inLog) return;
+
+    const embed_Quite_User = new Discord.MessageEmbed()
+    .setColor("#dc143c")
+    .setTitle(`${member.user.username} nous a quité`)
+    .setTimestamp();
+    return inLog.send(embed_Quite_User);
+});
