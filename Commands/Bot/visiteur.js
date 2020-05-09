@@ -13,7 +13,7 @@ module.exports = {
         {
             function Attribution_Visiteur() 
             {
-                let role = message.guild.roles.cache.find(r => r.id == '708402837998010379');
+                let role = message.guild.roles.cache.find(r => r.id == '430051447254810625');
                 if (!role) return message.channel.send(`**${message.author.username}**, role not found`);
             
                 message.guild.members.cache.filter(member => member.roles.cache.array().length <= 1).forEach(member => member.roles.add(role));
