@@ -36,7 +36,7 @@ for (let j=0 ; j<category.length ; j++)
 }
 
 Ecki.on("message", message => {
-    Ecki.commands.get('visiteur').execute("", message, "");
+   
     
     if (!message.content.startsWith(PREFIX) || message.author.bot) return;
 
