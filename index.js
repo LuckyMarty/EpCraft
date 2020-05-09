@@ -80,7 +80,7 @@ Ecki.on('ready', () => {
 
 Ecki.on('guildMemberAdd', member => {
     const welcome = member.guild.channels.cache.find((channel) => channel.id === "430047753507176451");
-    if (!inLog) return;
+    if (!welcome) return;
     return welcome.send(`Bienvenue à ${member.user} sur EpCraft !`);
 });
 
