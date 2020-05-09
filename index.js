@@ -79,15 +79,9 @@ Ecki.on('ready', () => {
 });
 
 Ecki.on('guildMemberAdd', member => {
-    const inLog = member.guild.channels.cache.find((channel) => channel.id === "708624241053925396");
     const welcome = member.guild.channels.cache.find((channel) => channel.id === "430047753507176451");
     if (!inLog) return;
-
-    const embed_New_user = new Discord.MessageEmbed()
-    .setColor("#77dd77")
-    .setTitle(`${member.user.username} nous a rejoint`)
-    .setTimestamp();
-    return inLog.send(embed_New_user),welcome.send(embed_New_user);
+    return welcome.send(`Bienvenue à ${member.user} sur EpCraft !`);
 });
 
 Ecki.on('guildMemberRemove', member => {
