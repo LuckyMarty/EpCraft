@@ -9,6 +9,11 @@ module.exports = {
     isUserAdmin: true,
     
     execute(bot, message, args) {
+        if (message.guild.member(message.mentions.users.first())) 
+        {
+            if (message.guild.member(message.mentions.users.first()).hasPermission('ADMINISTRATOR')) return message.reply("Tu ne peux pas utiliser cette commande sur cette utilisateur.");
+        } else return message.reply("L'utilisateur mentionné n'existe pas ou n'est pas mentionnable.");
+        
         const {MessageEmbed} = require("discord.js");
         
         const user = message.mentions.users.first();
@@ -24,6 +29,6 @@ module.exports = {
         .setTimestamp()
         .setFooter(message.author.username, message.author.avatarURL());
 
-        bot.channels.cache.get('708314429821026356').send(embed);
+        bot.channels.cache.get('708624241053925396').send(embed);
     }
 }
