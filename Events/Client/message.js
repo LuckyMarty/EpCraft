@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const Ecki = new Discord.Client();
-const config = require("../../config.json");
-const PREFIX = config.PREFIX;
+const PREFIX = process.env.PREFIX;
 
 module.exports = (Ecki, message) => {
     Ecki.commands.get('visiteur').execute("", message, "");
