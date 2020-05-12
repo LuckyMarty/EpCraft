@@ -10,7 +10,6 @@ module.exports = {
     
     execute(bot, message, args) {
         const ms = require('ms');
-        require("discord-giveaways");
 
         // Controle de permission
         if(!message.member.hasPermission('ADMINISTRATOR') && !message.member.roles.cache.some((r) => r.name === "Giveaways")){
