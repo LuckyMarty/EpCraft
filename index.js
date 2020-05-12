@@ -10,6 +10,20 @@ Ecki.login(process.env.TOKEN);
 const PREFIX = process.env.PREFIX;
 
 
+// Init discord giveaways
+const { GiveawaysManager } = require('discord-giveaways');
+Ecki.giveawaysManager = new GiveawaysManager(Ecki, {
+    storage: "./giveaways.json",
+    updateCountdownEvery: 5000,
+    default: {
+        botsCanWin: false,
+        exemptPermissions: [ "MANAGE_MESSAGES", "ADMINISTRATOR" ],
+        embedColor: "#FF0000",
+        reaction: "🎉"
+    }
+});
+
+
 // CHERCHER LA COMMANDE ET ALIAS
 const category = fs.readdirSync('./Commands');
 
