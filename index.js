@@ -24,30 +24,30 @@ Ecki.giveawaysManager = new GiveawaysManager(Ecki, {
 });
 
 
-// CHERCHER LA COMMANDE ET ALIAS
-const category = fs.readdirSync('./Commands');
+// // CHERCHER LA COMMANDE ET ALIAS
+// const category = fs.readdirSync('./Commands');
 
-for (let j=0 ; j<category.length ; j++)
-{
-    fs.readdir("./Commands/"+category[j], (err, files) => {
-        if (err) console.log(err);
+// for (let j=0 ; j<category.length ; j++)
+// {
+//     fs.readdir("./Commands/"+category[j], (err, files) => {
+//         if (err) console.log(err);
 
-        let jsfile = files.filter(f => f.split(".").pop() === "js");
+//         let jsfile = files.filter(f => f.split(".").pop() === "js");
         
-        if (jsfile.length <= 0)
-        {
-            return console.log("[LOGS] Impossible de trouver la commande !");
-        }
+//         if (jsfile.length <= 0)
+//         {
+//             return console.log("[LOGS] Impossible de trouver la commande !");
+//         }
 
-        jsfile.forEach((f, i) => {
-            let pull = require(`./Commands/${category[j]}/${f}`);
-            Ecki.commands.set(pull.name, pull);      //Chercher la commande
-            pull.aliases.forEach(alias => {
-                Ecki.aliases.set(alias, pull.name);  //Chercher l'alias de la commande
-            });
-        });
-    });
-}
+//         jsfile.forEach((f, i) => {
+//             let pull = require(`./Commands/${category[j]}/${f}`);
+//             Ecki.commands.set(pull.name, pull);      //Chercher la commande
+//             pull.aliases.forEach(alias => {
+//                 Ecki.aliases.set(alias, pull.name);  //Chercher l'alias de la commande
+//             });
+//         });
+//     });
+// }
 
 const loadCommands = (dir = "./Commands") => {
     fs.readdirSync(dir).forEach(dirs => {
