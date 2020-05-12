@@ -56,7 +56,7 @@ module.exports = {
                 noWinner: "Giveaway annulé, aucune participation valide.",
                 hostedBy: "Auteur : {user}",
                 winners: "Gagnant(e•s)",
-                endedAt: "Terminé à",
+                endedAt: "Termine",
                 units: {
                     seconds: "secondes",
                     minutes: "minutes",
