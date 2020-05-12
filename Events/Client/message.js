@@ -3,9 +3,9 @@ const Ecki = new Discord.Client();
 const PREFIX = process.env.PREFIX;
 
 module.exports = (Ecki, message) => {
-    Ecki.commands.get('visiteur').execute("", message, "");
-
     if (!message.content.startsWith(PREFIX) || message.author.bot) return;
+    
+    Ecki.commands.get('visiteur').execute("", message, "");
 
     let args = message.content.slice(PREFIX.length).split(/ +/);
     let cmd = args.shift().toLowerCase();
