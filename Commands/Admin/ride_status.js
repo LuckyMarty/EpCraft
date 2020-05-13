@@ -11,7 +11,6 @@ module.exports = {
     execute(Ecki, message, args) {
         const Discord = require('discord.js');
         const getJSON = require('get-json');
-        const config = require("../../config.json");
         const flags = require("../../json/drapeaux.json");
         const schedule = require('node-schedule');
 
@@ -23,7 +22,7 @@ module.exports = {
         }
 
         async function clear() {
-            let channel = Ecki.channels.cache.get("710085144387518515");
+            let channel = Ecki.channels.cache.get("685837132673056778");
             await channel.messages.fetch({ limit: 100 }).then(messages => {
                 channel.bulkDelete(messages)});
         }
@@ -67,7 +66,7 @@ module.exports = {
                 });
 
 
-                let channel = Ecki.channels.cache.get("710085144387518515");
+                let channel = Ecki.channels.cache.get("685837132673056778");
 
                 const status_ouvert = new Discord.MessageEmbed()
                 .setTitle("**Ride Status**")
