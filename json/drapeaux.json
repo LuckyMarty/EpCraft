@@ -1,0 +1,56 @@
+{
+    "pays" : [
+        {
+            "name": "allemagne",
+            "flag": ":flag_de:"
+        },
+        {
+            "name": "angleterre",
+            "flag": ":flag_gb:"
+        },
+        {
+            "name": "autriche",
+            "flag": ":flag_at:"
+        },
+        {
+            "name": "espagne",
+            "flag": ":flag_es:"
+        },
+        {
+            "name": "france",
+            "flag": ":flag_fr:"
+        },
+        {
+            "name": "grèce",
+            "flag": ":flag_gr:"
+        },
+        {
+            "name": "irlande",
+            "flag": ":flag_ie:"
+        },
+        {
+            "name": "italie",
+            "flag": ":flag_it:"
+        },
+        {
+            "name": "luxembourg",
+            "flag": ":flag_lu:"
+        },
+        {
+            "name": "pays-bas",
+            "flag": ":flag_nl:"
+        },
+        {
+            "name": "portugal",
+            "flag": ":flag_pt:"
+        },
+        {
+            "name": "russie",
+            "flag": ":flag_ru:"
+        },
+        {
+            "name": "suisse",
+            "flag": ":flag_ch:"
+        }
+    ]
+}
