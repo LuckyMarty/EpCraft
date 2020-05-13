@@ -96,7 +96,7 @@ module.exports = {
                     allRidesStatus_per_land[land].forEach(ride => {
                         if (ride.statut == "Construction")
                         {
-                            rideName += ":warning: " + ride.name + "\n";
+                            rideName += ":construction_site: " + ride.name + "\n";
                         }
                     });
 
