@@ -14,5 +14,21 @@ module.exports = Ecki => {
             Ecki.user.setActivity("EpCraft " + response.onlinePlayers + "/" + response.maxPlayers +" (!help)", {type: "PLAYING"});
         });
     }
-    setInterval(joueurs, 1000);
+
+    let msg = 0;
+    function info()
+    {
+        switch (msg) {
+            case 0:
+                joueurs();
+                return msg = 1;
+                break;
+        
+            case 1:
+                Ecki.user.setActivity("play.epcraft.fr (en 1.15.2)", {type: "PLAYING"});
+                return msg = 0;
+                break;
+        } 
+    }
+    setInterval(info, 5000)
 }
