@@ -22,7 +22,7 @@ module.exports = {
         }
 
         async function clear() {
-            let channel = Ecki.channels.cache.get("710085144387518515");
+            let channel = Ecki.channels.cache.get("685837132673056778");
             await channel.messages.fetch({ limit: 100 }).then(messages => {
                 channel.bulkDelete(messages)});
         }
