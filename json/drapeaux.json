@@ -51,6 +51,10 @@
         {
             "name": "suisse",
             "flag": ":flag_ch:"
+        },
+        {
+            "name": "islande",
+            "flag": ":flag_is:"
         }
     ]
 }
