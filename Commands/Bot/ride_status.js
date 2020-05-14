@@ -126,7 +126,7 @@ module.exports = {
             });
         }
  
-        let j = schedule.scheduleJob('21 5 * * *', function(){
+        let j = schedule.scheduleJob('35 5 * * *', function(){
             clear();
             embedStatus();
         });
