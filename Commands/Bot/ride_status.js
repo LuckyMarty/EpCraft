@@ -125,6 +125,8 @@ module.exports = {
                 channel.send(status_ouvert);
             });
         }
+        
+        console.log("Ride Status Launch");
  
         let j = schedule.scheduleJob('0 2 * * *', function(){
             clear();
