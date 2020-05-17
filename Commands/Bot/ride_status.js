@@ -128,7 +128,8 @@ module.exports = {
         
         console.log("Ride Status Launch");
  
-        let j = schedule.scheduleJob('0 2 * * *', function(){
+        schedule.scheduleJob('0 2 * * *', function(){
+            console.log("Ride Status Sended");
             clear();
             embedStatus();
         });
