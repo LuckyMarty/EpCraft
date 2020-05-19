@@ -8,7 +8,7 @@ module.exports = (Ecki, message) => {
     if (message.content == PREFIX+"start_bot")
     {
         Ecki.commands.get('visiteur').execute("", message, "");
-        Ecki.commands.get('ride_status').execute(Ecki, message, "");
+//         Ecki.commands.get('ride_status').execute(Ecki, message, "");
     }
 
     let args = message.content.slice(PREFIX.length).split(/ +/);
