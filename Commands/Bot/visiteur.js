@@ -17,7 +17,7 @@ module.exports = {
                 if (!role) return;
             
                 message.guild.members.cache.filter(member => member.roles.cache.array().length <= 1).forEach(member => member.roles.add(role));
-                // console.log("visiteur");
+                console.log("visiteur");
             }
             setInterval(Attribution_Visiteur, 1000);
         }
