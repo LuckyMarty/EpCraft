@@ -14,66 +14,47 @@ module.exports = {
         const flags = require("../../json/drapeaux.json");
         const schedule = require('node-schedule');
 
-        function groupArrayOfObjects(list, key) {
-            return list.reduce(function(rv, x) {
-                (rv[x[key]] = rv[x[key]] || []).push(x);
-                return rv;
-            }, {});
-        }
-
         async function clear() {
             let channel = Ecki.channels.cache.get("685837132673056778");
             await channel.messages.fetch({ limit: 100 }).then(messages => {
                 channel.bulkDelete(messages)});
         }
 
-
         function embedStatus() {
-            getJSON('https://epcraft.fr/api/coasters', function(error, response){
+            getJSON('https://www.epcraft.fr/api/coasters', function(error, response){
 
                 // Grouper par Quartier
-                let groupByLand = response.reduce(function (r, a) {
-                    r[a.land] = r[a.land] || [];
-                    r[a.land].push(a);
+                let groupByLand = response.data.reduce(function (r, a) {
+                    r[a.land.name] = r[a.land.name] || [];
+                    r[a.land.name].push(a);
                     return r;
                 }, Object.create(null));
 
                 // Récuper le nom des Quartiers
                 let listLand = Object.keys(groupByLand).sort();
 
-                let allRidesStatus = [], rideEmoji = [];
+                let allRidesStatus = [];
 
                 listLand.forEach(x => {
                     groupByLand[x].forEach(ride => {
-                        if (ride.statut == "Ouvert")
-                        {
-                            allRidesStatus.push(ride);
-                            rideEmoji.push(":white_check_mark:");
-                        }
-
-                        if (ride.statut == "Fermé")
-                        {
-                            allRidesStatus.push(ride);
-                            rideEmoji.push(":x:");
-                        }
-
-                        if (ride.statut == "Construction")
-                        {
-                            allRidesStatus.push(ride);
-                            rideEmoji.push(":warning:");
-                        }
+                        allRidesStatus.push(ride);
                     });
                 });
-
 
                 let channel = Ecki.channels.cache.get("685837132673056778");
 
                 const status_ouvert = new Discord.MessageEmbed()
                 .setTitle("**Ride Status**")
                 
-                // TRIER : OUVERT / FERME / CONSTRUCTION
-                let allRidesStatus_per_land = groupArrayOfObjects(allRidesStatus, "land");
+                // // TRIER : OUVERT / FERME / CONSTRUCTION
+                let allRidesStatus_per_land = allRidesStatus.reduce(function (r, a) {
+                    r[a.land.name] = r[a.land.name] || [];
+                    r[a.land.name].push(a);
+                    return r;
+                }, Object.create(null));
+
                 Object.keys(allRidesStatus_per_land).forEach(land => {
+
                     let rideName = "";
 
                     // OUVERT
@@ -96,17 +77,19 @@ module.exports = {
                     allRidesStatus_per_land[land].forEach(ride => {
                         if (ride.statut == "Construction")
                         {
-                            rideName += ":construction_site: " + ride.name + "\n";
+                            rideName += ":warning: " + ride.name + "\n";
                         }
                     });
 
+                    // Afficher le Pays en titre
                     let embedLand = "";
-                    flags.pays.forEach(pays => {
-                        if (pays.name === land.toLowerCase())
+                    allRidesStatus.forEach(landName => {
+                        if (landName.land.name.toLowerCase() === land.toLowerCase())
                         {
-                            return embedLand = `__**${pays.flag}              ${land}              ${pays.flag}**__`;
+                            return embedLand = `__**${landName.land.emoji}              ${land}              ${landName.land.emoji}**__`;
                         } else return;
                     });
+
 
                     // AFFICHER
                     if (rideName != "")
@@ -115,7 +98,7 @@ module.exports = {
                         {
                             status_ouvert.addField(embedLand, rideName + "\n\n");
                         } else {
-                            status_ouvert.addField(`__**${land}**__`, rideName + "\n\n");
+                            status_ouvert.addField(`__**${land}**__`, rideName);
                         }
                     }
                     else return;
