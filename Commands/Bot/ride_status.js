@@ -11,7 +11,6 @@ module.exports = {
     execute(Ecki, message, args) {
         const Discord = require('discord.js');
         const getJSON = require('get-json');
-        const flags = require("../../json/drapeaux.json");
         const schedule = require('node-schedule');
 
         async function clear() {
