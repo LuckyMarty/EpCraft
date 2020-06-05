@@ -6,7 +6,7 @@ module.exports = (Ecki, member) => {
 
     const embed_Quite_User = new Discord.MessageEmbed()
     .setColor("#dc143c")
-    .setTitle(`${member.user} nous a quité`)
+    .setTitle(`__**${member.user.username}**__ nous a quité`)
     .setTimestamp();
     return inLog.send(embed_Quite_User);
 }
