@@ -30,7 +30,7 @@ module.exports = Ecki => {
                 break;
         } 
     }
-//     setInterval(info, 5000);
+    setInterval(info, 5000);
     
 //     const schedule = require('node-schedule');
 //     let j = schedule.scheduleJob('0 2 * * *', function(){
