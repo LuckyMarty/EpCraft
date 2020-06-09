@@ -30,11 +30,11 @@ module.exports = Ecki => {
                 break;
         } 
     }
-    setInterval(info, 5000);
+//     setInterval(info, 5000);
     
-    const schedule = require('node-schedule');
-    let j = schedule.scheduleJob('0 2 * * *', function(){
-        console.log("Ride Status Sended");
-        Ecki.commands.get('ride_status').execute(Ecki, Ecki.messages, "");
-    });  
+//     const schedule = require('node-schedule');
+//     let j = schedule.scheduleJob('0 2 * * *', function(){
+//         console.log("Ride Status Sended");
+//         Ecki.commands.get('ride_status').execute(Ecki, Ecki.messages, "");
+//     });  
 }
