@@ -1,0 +1,386 @@
+{
+    "langs": {
+        "Item": [
+            {
+                "_key": "af",
+                "_value": "Afrikaans"
+            },
+            {
+                "_key": "am",
+                "_value": "Amharic"
+            },
+            {
+                "_key": "ar",
+                "_value": "Arabic"
+            },
+            {
+                "_key": "az",
+                "_value": "Azerbaijani"
+            },
+            {
+                "_key": "ba",
+                "_value": "Bashkir"
+            },
+            {
+                "_key": "be",
+                "_value": "Belarusian"
+            },
+            {
+                "_key": "bg",
+                "_value": "Bulgarian"
+            },
+            {
+                "_key": "bn",
+                "_value": "Bengali"
+            },
+            {
+                "_key": "bs",
+                "_value": "Bosnian"
+            },
+            {
+                "_key": "ca",
+                "_value": "Catalan"
+            },
+            {
+                "_key": "ceb",
+                "_value": "Cebuano"
+            },
+            {
+                "_key": "cs",
+                "_value": "Czech"
+            },
+            {
+                "_key": "cv",
+                "_value": "Chuvash"
+            },
+            {
+                "_key": "cy",
+                "_value": "Welsh"
+            },
+            {
+                "_key": "da",
+                "_value": "Danish"
+            },
+            {
+                "_key": "de",
+                "_value": "German"
+            },
+            {
+                "_key": "el",
+                "_value": "Greek"
+            },
+            {
+                "_key": "en",
+                "_value": "English"
+            },
+            {
+                "_key": "eo",
+                "_value": "Esperanto"
+            },
+            {
+                "_key": "es",
+                "_value": "Spanish"
+            },
+            {
+                "_key": "et",
+                "_value": "Estonian"
+            },
+            {
+                "_key": "eu",
+                "_value": "Basque"
+            },
+            {
+                "_key": "fa",
+                "_value": "Persian"
+            },
+            {
+                "_key": "fi",
+                "_value": "Finnish"
+            },
+            {
+                "_key": "fr",
+                "_value": "French"
+            },
+            {
+                "_key": "ga",
+                "_value": "Irish"
+            },
+            {
+                "_key": "gd",
+                "_value": "Scottish Gaelic"
+            },
+            {
+                "_key": "gl",
+                "_value": "Galician"
+            },
+            {
+                "_key": "gu",
+                "_value": "Gujarati"
+            },
+            {
+                "_key": "he",
+                "_value": "Hebrew"
+            },
+            {
+                "_key": "hi",
+                "_value": "Hindi"
+            },
+            {
+                "_key": "hr",
+                "_value": "Croatian"
+            },
+            {
+                "_key": "ht",
+                "_value": "Haitian"
+            },
+            {
+                "_key": "hu",
+                "_value": "Hungarian"
+            },
+            {
+                "_key": "hy",
+                "_value": "Armenian"
+            },
+            {
+                "_key": "id",
+                "_value": "Indonesian"
+            },
+            {
+                "_key": "is",
+                "_value": "Icelandic"
+            },
+            {
+                "_key": "it",
+                "_value": "Italian"
+            },
+            {
+                "_key": "ja",
+                "_value": "Japanese"
+            },
+            {
+                "_key": "jv",
+                "_value": "Javanese"
+            },
+            {
+                "_key": "ka",
+                "_value": "Georgian"
+            },
+            {
+                "_key": "kk",
+                "_value": "Kazakh"
+            },
+            {
+                "_key": "km",
+                "_value": "Khmer"
+            },
+            {
+                "_key": "kn",
+                "_value": "Kannada"
+            },
+            {
+                "_key": "ko",
+                "_value": "Korean"
+            },
+            {
+                "_key": "ky",
+                "_value": "Kyrgyz"
+            },
+            {
+                "_key": "la",
+                "_value": "Latin"
+            },
+            {
+                "_key": "lb",
+                "_value": "Luxembourgish"
+            },
+            {
+                "_key": "lo",
+                "_value": "Lao"
+            },
+            {
+                "_key": "lt",
+                "_value": "Lithuanian"
+            },
+            {
+                "_key": "lv",
+                "_value": "Latvian"
+            },
+            {
+                "_key": "mg",
+                "_value": "Malagasy"
+            },
+            {
+                "_key": "mhr",
+                "_value": "Mari"
+            },
+            {
+                "_key": "mi",
+                "_value": "Maori"
+            },
+            {
+                "_key": "mk",
+                "_value": "Macedonian"
+            },
+            {
+                "_key": "ml",
+                "_value": "Malayalam"
+            },
+            {
+                "_key": "mn",
+                "_value": "Mongolian"
+            },
+            {
+                "_key": "mr",
+                "_value": "Marathi"
+            },
+            {
+                "_key": "mrj",
+                "_value": "Hill Mari"
+            },
+            {
+                "_key": "ms",
+                "_value": "Malay"
+            },
+            {
+                "_key": "mt",
+                "_value": "Maltese"
+            },
+            {
+                "_key": "my",
+                "_value": "Burmese"
+            },
+            {
+                "_key": "ne",
+                "_value": "Nepali"
+            },
+            {
+                "_key": "nl",
+                "_value": "Dutch"
+            },
+            {
+                "_key": "no",
+                "_value": "Norwegian"
+            },
+            {
+                "_key": "pa",
+                "_value": "Punjabi"
+            },
+            {
+                "_key": "pap",
+                "_value": "Papiamento"
+            },
+            {
+                "_key": "pl",
+                "_value": "Polish"
+            },
+            {
+                "_key": "pt",
+                "_value": "Portuguese"
+            },
+            {
+                "_key": "ro",
+                "_value": "Romanian"
+            },
+            {
+                "_key": "ru",
+                "_value": "Russian"
+            },
+            {
+                "_key": "sah",
+                "_value": "Yakut"
+            },
+            {
+                "_key": "si",
+                "_value": "Sinhalese"
+            },
+            {
+                "_key": "sk",
+                "_value": "Slovak"
+            },
+            {
+                "_key": "sl",
+                "_value": "Slovenian"
+            },
+            {
+                "_key": "sq",
+                "_value": "Albanian"
+            },
+            {
+                "_key": "sr",
+                "_value": "Serbian"
+            },
+            {
+                "_key": "su",
+                "_value": "Sundanese"
+            },
+            {
+                "_key": "sv",
+                "_value": "Swedish"
+            },
+            {
+                "_key": "sw",
+                "_value": "Swahili"
+            },
+            {
+                "_key": "ta",
+                "_value": "Tamil"
+            },
+            {
+                "_key": "te",
+                "_value": "Telugu"
+            },
+            {
+                "_key": "tg",
+                "_value": "Tajik"
+            },
+            {
+                "_key": "th",
+                "_value": "Thai"
+            },
+            {
+                "_key": "tl",
+                "_value": "Tagalog"
+            },
+            {
+                "_key": "tr",
+                "_value": "Turkish"
+            },
+            {
+                "_key": "tt",
+                "_value": "Tatar"
+            },
+            {
+                "_key": "udm",
+                "_value": "Udmurt"
+            },
+            {
+                "_key": "uk",
+                "_value": "Ukrainian"
+            },
+            {
+                "_key": "ur",
+                "_value": "Urdu"
+            },
+            {
+                "_key": "uz",
+                "_value": "Uzbek"
+            },
+            {
+                "_key": "vi",
+                "_value": "Vietnamese"
+            },
+            {
+                "_key": "xh",
+                "_value": "Xhosa"
+            },
+            {
+                "_key": "yi",
+                "_value": "Yiddish"
+            },
+            {
+                "_key": "zh",
+                "_value": "Chinese"
+            }
+        ]
+    }
+}
